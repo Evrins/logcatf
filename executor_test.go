@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ujiro99/logcatf/logcat"
+	"logcatf/logcat"
 )
 
 func Test_IfMatch(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/mitchellh/colorstring"
-	"github.com/ujiro99/logcatf/logcat"
+	"logcatf/logcat"
 )
 
 const (

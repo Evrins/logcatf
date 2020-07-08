@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/ujiro99/logcatf/logcat"
+	"logcatf/logcat"
 )
 
 const flagAll = -1

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ujiro99/logcatf/logcat"
+	"logcatf/logcat"
 )
 
 func ExampleLogcatItem_Format_time_message() {

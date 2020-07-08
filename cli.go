@@ -6,10 +6,10 @@ import (
 	"regexp"
 	"runtime"
 
-	"github.com/ujiro99/logcatf/logcat"
+	"logcatf/logcat"
 
 	"github.com/Maki-Daisuke/go-lines"
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"golang.org/x/text/encoding/japanese"
 	"golang.org/x/text/transform"
 	"gopkg.in/alecthomas/kingpin.v2"

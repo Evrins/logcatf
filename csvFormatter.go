@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/ujiro99/logcatf/logcat"
+	"logcatf/logcat"
 )
 
 // implements Formatter

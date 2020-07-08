@@ -8,8 +8,8 @@ import (
 	"runtime"
 	"strings"
 
-	log "github.com/Sirupsen/logrus"
-	"github.com/ujiro99/logcatf/logcat"
+	log "github.com/sirupsen/logrus"
+	"logcatf/logcat"
 )
 
 // Executor executes a command if neccesary.
