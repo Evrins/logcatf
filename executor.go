@@ -12,19 +12,19 @@ import (
 	"logcatf/logcat"
 )
 
-// Executor executes a command if neccesary.
+// Executor executes a command if necessary.
 type Executor interface {
 
 	// IfMatch watches logcat line.
-	// - if line matches trigger, returns executer.
-	// - if line not matches trigger, returns emptyExecuter.
+	// - if line matches trigger, returns executor.
+	// - if line not matches trigger, returns emptyExecutor.
 	IfMatch(line string) Executor
 
 	// Exec command.
 	Exec(item logcat.Entry)
 }
 
-// implements Executer.
+// implements Executor.
 type executor struct {
 	trigger *regexp.Regexp
 	command *string
@@ -53,7 +53,7 @@ var (
 	}
 )
 
-// check a line. implements Executer.
+// check a line. implements Executor.
 func (e *executor) IfMatch(line string) Executor {
 	if line == "" || !e.trigger.MatchString(line) {
 		return &empty
@@ -62,7 +62,7 @@ func (e *executor) IfMatch(line string) Executor {
 	return e
 }
 
-// execute command. implements Executer.
+// execute command. implements Executor.
 func (e *executor) Exec(item logcat.Entry) {
 	log.Debugf("--command start: \"%s\"", *e.command)
 
@@ -100,7 +100,7 @@ func (e *executor) replaceFlags(cmd string, flags map[string]string) string {
 	return cmd
 }
 
-// implements Executer. but not execute anything.
+// implements Executor. but not execute anything.
 type emptyExecutor struct {
 }
 

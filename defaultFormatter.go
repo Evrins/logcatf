@@ -30,8 +30,8 @@ type Formatter interface {
 	Format(item *logcat.Entry) string
 	// Verify checks a format
 	Verify() error
-	// Normarize convert long keys to short keys.
-	Normarize()
+	// Normalize convert long keys to short keys.
+	Normalize()
 }
 
 // implements Formatter
@@ -65,11 +65,11 @@ func (f *defaultFormatter) Format(item *logcat.Entry) string {
 func (f *defaultFormatter) Verify() error {
 	err := FormatError{}
 	var msg []string
-	msg = f.verifyUnabailavleKeyword(*f.format)
+	msg = f.verifyUnavailableKeyword(*f.format)
 	if msg != nil {
 		err.errors = append(err.errors, msg...)
 	}
-	msg = f.verifyDuplicatedKeyword(*f.format)
+	msg = f.verifyUnavailableKeyword(*f.format)
 	if msg != nil {
 		err.errors = append(err.errors, msg...)
 	}
@@ -79,7 +79,7 @@ func (f *defaultFormatter) Verify() error {
 	return &err
 }
 
-func (f *defaultFormatter) verifyUnabailavleKeyword(format string) []string {
+func (f *defaultFormatter) verifyUnavailableKeyword(format string) []string {
 	// find unavailable keyword.
 	removed := formatRegex.ReplaceAllString(format, "")
 	removed = sformatRegex.ReplaceAllString(removed, "")
@@ -87,7 +87,7 @@ func (f *defaultFormatter) verifyUnabailavleKeyword(format string) []string {
 	matches := keyRegexp.FindAllString(removed, flagAll)
 
 	if len(matches) == 0 {
-		return nil // no probrem!
+		return nil // no problem!
 	}
 
 	// return error message.
@@ -136,8 +136,8 @@ func (e *FormatError) Error() string {
 	return ""
 }
 
-// Normarize implements Formatter
-func (f *defaultFormatter) Normarize() {
+// Normalize implements Formatter
+func (f *defaultFormatter) Normalize() {
 	newFormat := *f.format
 	for long, short := range formatMap {
 		newFormat = strings.Replace(newFormat, long, short, flagAll)

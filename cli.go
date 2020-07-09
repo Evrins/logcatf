@@ -133,7 +133,7 @@ func (cli *CLI) initFormatter(toCsv bool, format string) {
 		formatter = &defaultFormatter{format: &format}
 	}
 	// convert format (long => short)
-	formatter.Normarize()
+	formatter.Normalize()
 }
 
 // initialize Writer

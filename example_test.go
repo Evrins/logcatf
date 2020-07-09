@@ -19,7 +19,7 @@ func ExampleLogcatItem_Format_time_message() {
 	// 12-28 19:01:14.073, at com.google.android.gms.auth.be.appcert.b.a(SourceFile:43)
 }
 
-func ExampleLogcatItem_Format_escapedCharactor() {
+func ExampleLogcatItem_Format_escapedCharacter() {
 	item := &logcat.Entry{
 		"time":     "12-28 19:01:14.073",
 		"tag":      "GLSUser",
