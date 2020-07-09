@@ -48,12 +48,12 @@ var (
 	}
 
 	logPatternsHasTab = map[string]string{
-		"brief": "I/auditd  (  930): 	test Message",
-		"process": "I(  930) 	test Message  (auditd)",
-		"tag": "I/auditd  : 	test Message",
-		"time": "12-28 18:54:07.180 I/auditd  (  930): 	test Message",
+		"brief":      "I/auditd  (  930): 	test Message",
+		"process":    "I(  930) 	test Message  (auditd)",
+		"tag":        "I/auditd  : 	test Message",
+		"time":       "12-28 18:54:07.180 I/auditd  (  930): 	test Message",
 		"threadtime": "12-28 18:54:07.180   930   931 I auditd  : 	test Message",
-		"raw": "	test Message",
+		"raw":        "	test Message",
 	}
 )
 
